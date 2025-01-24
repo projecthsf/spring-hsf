@@ -88,3 +88,12 @@ curl --location 'http://provider.host/hsf' \
 --data '{"classInterface":"com.spring.api.CustomerApi","method":"getCustomer","paramTypes":["int"],"params":[1],"version":"1.0.0"}'
 ```
 
+Note: 
+- HsfProvider support versioning, its mean you can implement multi version for same interface (by default version = 1.0.0)
+
+```
+@HsfProvider(version="2.0.0")
+public class CustomerApiImpl implements CustomerApi {
+}
+```
+
