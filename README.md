@@ -228,6 +228,5 @@ More documents:
 
 [HSF Provider](https://github.com/projecthsf/spring-hsf/blob/main/docs/provider.md)
 
-Report an issue:
-[HSF Provider](https://github.com/projecthsf/spring-hsf/issues)
+[Report an issue](https://github.com/projecthsf/spring-hsf/issues)
 
