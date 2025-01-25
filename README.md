@@ -89,7 +89,14 @@ public class CustomerApiService implements CustomerApi {
 
 ### 1. Pre condition
 
-Your app MUST run on Spring Boot web (which provides bean world)
+Your app MUST run on Spring Boot web
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>3.4.1</version>
+</dependency>
+```
 
 ### 2. Dependency 
 
