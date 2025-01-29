@@ -1,8 +1,8 @@
 package io.github.projecthsf.binding.cusomer;
 
+import io.github.projecthsf.annotation.HsfConsumer;
 import io.github.projecthsf.service.HsfConsumerService;
 import lombok.extern.slf4j.Slf4j;
-import io.github.projecthsf.annotation.HsfConsumer;
 import org.springframework.context.ApplicationContext;
 
 import java.lang.reflect.InvocationHandler;

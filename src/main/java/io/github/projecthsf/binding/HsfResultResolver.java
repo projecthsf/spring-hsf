@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.MapType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import io.github.projecthsf.util.ClassUtil;
+import io.github.easyannotation.util.ClassUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.InvalidClassException;
