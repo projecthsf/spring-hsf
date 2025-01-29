@@ -8,7 +8,7 @@
 	<name>spring-hsf</name>
 	<packaging>jar</packaging>
 	<description>HSF is a framework that provide a simple way to connect api between client and server</description>
-	<url>https://github.com/project-hsf/spring-hsf</url>
+	<url>https://github.com/projecthsf/spring-hsf</url>
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
