@@ -10,7 +10,7 @@ You can check values by http://provider.host/hsf/list
 # Consumer
 
 The config will be loaded from src/main/java/io/github/projecthsf/property/HsfConsumerProperty.java
-```
+```java
 package io.github.projecthsf.property;
 
 import lombok.Getter;
@@ -34,14 +34,14 @@ public class HsfConsumerProperty {
 ```
 
 and the values will load from application.properties
-```
+```properties
 spring.hsf.consumer.rootPath=/custom-root-path // default = /hsf
 spring.hsf.consumer.host=http://default-provider.host // default provider host
 spring.hsf.consumer.hosts.CustomerApi=http://customer-provider.host // for specific interface
 ```
 
 When a interface call:
-```
+```java
 customerApi.getCustomer() -> call to http://customer-provider.host/custom-root-path (b/c spring.hsf.consumer.hosts.CustomerApi has value)
 productApi.getProduct() -> call to http://default-provider.host/custom-root-path (b/c spring.hsf.consumer.hosts.ProductApi doesn't exist)
 ```
