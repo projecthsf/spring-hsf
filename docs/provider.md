@@ -5,7 +5,7 @@ A provider is
 - Have annotation @HsfProvider
 
 Example interface CustomerApi:
-```
+```java
 package com.spring.api;
 
 import com.spring.api.dto.CustomerDTO;
@@ -23,7 +23,7 @@ public interface CustomerApi {
 
 Example implement CustomerApiImpl:
 
-```
+```java
 package com.spring.provider.provider;
 
 import com.spring.api.CustomerApi;
@@ -91,7 +91,7 @@ curl --location 'http://provider.host/hsf' \
 Note: 
 - HsfProvider support versioning, its mean you can implement multi version for same interface (by default version = 1.0.0)
 
-```
+```java
 @HsfProvider(version="2.0.0")
 public class CustomerApiImpl implements CustomerApi {
 }
