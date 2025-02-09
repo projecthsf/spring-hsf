@@ -4,7 +4,7 @@ Let says you have 2 API providers:
 
 - Customer API -> provider for CustomerApi and run on host http:// customer.provider.host
 
-```
+```java
 package com.spring.api;
 
 import com.spring.api.dto.CustomerDTO;
@@ -20,7 +20,7 @@ public interface CustomerApi {
 }
 ```
 - Product API -> provider for ProductApi and run on host http://product.provider.host
-```
+```java
 package com.spring.api;
 
 import com.spring.api.dto.ProductDTO;
@@ -35,7 +35,7 @@ public interface ProductApi {
 ```
 
 ## Step 1: Update your application.properties:
-```
+```properties
 spring.hsf.customer.host=http://default-provider.host
 spring.hsf.customer.hosts.com.spring.api.CustomerApi=http:// customer.provider.host
 spring.hsf.customer.hosts.com.spring.api.ProductApi=http://product.provider.host
@@ -47,7 +47,7 @@ if spring.hsf.customer.hosts.com.spring.api.CustomerApi doesnt exist, **spring.h
 ## Step 2: Create bean
 
 You can create file HsfConsumerBean or just add to existed file has annotation @Configuration
-```
+```java
 package com.spring.consumer.config;
 
 import com.spring.api.CustomerApi;
@@ -73,7 +73,7 @@ Note:
 ## Step 3: Autowired
 
 Now you can autowired into service/component/controller/.... and make a call
-```
+```java
 package com.spring.consumer;
 
 import com.spring.api.CustomerApi;
