@@ -8,7 +8,7 @@ Dictionary:
 
 ## I. Introduction
 **Let says**: To obtain customer data, your application must call an API provided by an external source. The response from this API must following interface:
-```
+```java
 public interface CustomerApi** {
   CustomerDTO getCustomer(int id);
   List<CustomerDTO> getList(int groupId);
@@ -38,7 +38,7 @@ CustomerDTO dto = JSON.parse(json);
 
 #### b. With SpringHSF
 
-```
+```java
 CustomerDTO dto = customerApi.getCustomer(123)
 ```
 
@@ -46,7 +46,7 @@ CustomerDTO dto = customerApi.getCustomer(123)
 
 #### a. With RESTFULL
 
-```
+```java
 public class CustomerApiService implements CustomerApi {
     CustomerDTO getCustomer(int id) { //implement code }
     List<CustomerDTO> getList(int groupId) { //implement code }
@@ -55,7 +55,7 @@ public class CustomerApiService implements CustomerApi {
 }
 ```
 
-```
+```java
 @RestController
 public class CustomerController {
     @RequestMapping("/customer/{id}")
@@ -75,7 +75,7 @@ public class CustomerController {
 
 ### 2. With SpringHSF
 
-```
+```java
 @HsfProvider
 public class CustomerApiService implements CustomerApi {
     CustomerDTO getCustomer(int id) { //implement code }
@@ -90,7 +90,7 @@ public class CustomerApiService implements CustomerApi {
 ### 1. Pre condition
 
 Your app MUST run on Spring Boot web
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -101,11 +101,11 @@ Your app MUST run on Spring Boot web
 ### 2. Dependency 
 
 Add this dependency to your pom.xml
-```
+```xml
 <dependency>
     <groupId>io.github.projecthsf</groupId>
     <artifactId>spring-hsf</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
@@ -116,7 +116,7 @@ The API interfaces MUST be accessible  for both Consumer and Provider applicatio
 **Hint\*: you can create a separate package to contain only interface and dto support for that interfaces**
 
 Example: your api package contains interface CustomerApi and CustomerDTO
-```
+```java
 public interface CustomerApi {
     CustomerDTO getCustomer(int id);
     List<CustomerDTO> getList(int groupId);
@@ -135,7 +135,7 @@ public class CustomerDTO {
 
 ### 4. Implement provider
 
-```
+```java
 @HsfProvider
 @Slf4j
 public class CustomerApiImpl implements CustomerApi {
@@ -186,7 +186,7 @@ curl --location 'http://provider.host/hsf' \
 ```
 
 And get response:
-```
+```json
 {"id":1,"name":"Name 1","top":null}
 ```
 
@@ -194,7 +194,7 @@ And get response:
 ### Implement provider
 1. You need to add interface CustomerApi to bean with @HsfConsumer
 
-```
+```java
 @Configuration
 public class HsfConsumerConfig {
     @HsfConsumer
@@ -206,7 +206,7 @@ Note*: currently @HsfConsumer works ONLY under @Configuration
 
 And then you can use it in any your service or controller
 Example:
-```
+```java
 @Service
 public class CustomerService {
     @Autowired
